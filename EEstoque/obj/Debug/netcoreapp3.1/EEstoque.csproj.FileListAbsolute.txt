@@ -176,3 +176,4 @@ C:\Users\marlo\source\repos\EEstoque\EEstoque\obj\Debug\netcoreapp3.1\Razor\View
 C:\Users\marlo\source\repos\EEstoque\EEstoque\obj\Debug\netcoreapp3.1\Razor\Views\Estoques\Details.cshtml.g.cs
 C:\Users\marlo\source\repos\EEstoque\EEstoque\obj\Debug\netcoreapp3.1\Razor\Views\Estoques\Edit.cshtml.g.cs
 C:\Users\marlo\source\repos\EEstoque\EEstoque\obj\Debug\netcoreapp3.1\Razor\Views\Estoques\Index.cshtml.g.cs
+C:\Users\marlo\source\repos\EEstoque\EEstoque\obj\Debug\netcoreapp3.1\EEstoque.csprojAssemblyReference.cache

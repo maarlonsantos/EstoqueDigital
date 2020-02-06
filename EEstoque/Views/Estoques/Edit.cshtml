@@ -29,8 +29,13 @@
                 <span asp-validation-for="Quantidade" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <label asp-for="Proporcao" class="control-label"></label>
+                @Html.DropDownList("Proporcao", new SelectList(Enum.GetValues(typeof(EEstoque.Model.Proporcao))), new { @class = "form-control" })
+                <span asp-validation-for="Proporcao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Validade" class="control-label"></label>
-                <input asp-for="Validade" class="form-control" />
+                <input asp-for="Validade" type="date" class="form-control" />
                 <span asp-validation-for="Validade" class="text-danger"></span>
             </div>
             <div class="form-group">

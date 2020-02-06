@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EEstoque.Data;
 using EEstoque.Model;
@@ -52,7 +54,7 @@ namespace EEstoque.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Produto,Fornecedor,Quantidade,Validade")] Estoque estoque)
+        public async Task<IActionResult> Create([Bind("Id,Produto,Fornecedor,Quantidade,Proporcao,Validade")] Estoque estoque)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +87,7 @@ namespace EEstoque.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Produto,Fornecedor,Quantidade,Validade")] Estoque estoque)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,Produto,Fornecedor,Quantidade,Proporcao,Validade")] Estoque estoque)
         {
             if (id != estoque.Id)
             {
@@ -148,5 +150,19 @@ namespace EEstoque.Controllers
         {
             return _context.Estoque.Any(e => e.Id == id);
         }
+
+        //private Task LoadDependencyData()
+        //{
+
+        //    var enumlist = Enum.GetValues(typeof(Proporcao)).Cast<Proporcao>().Select(v => new SelectListItem
+        //    {
+        //        Text = v.ToString(),
+        //        Value = ((int)v).ToString()
+        //    }).ToList();
+
+        //    ViewBag.Proporcao = enumlist;
+            
+        //}
+
     }
 }
