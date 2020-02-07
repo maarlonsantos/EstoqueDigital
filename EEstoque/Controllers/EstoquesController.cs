@@ -22,6 +22,11 @@ namespace EEstoque.Controllers
         // GET: Estoques
         public async Task<IActionResult> Index()
         {
+            if (User.Identity.IsAuthenticated)
+            {
+
+            }
+
             return View(await _context.Estoque.ToListAsync());
         }
 
