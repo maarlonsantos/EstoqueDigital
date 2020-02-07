@@ -42,15 +42,17 @@ namespace EEstoque.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
+            [Required(ErrorMessage = "O [0] é obrigatório")]
+            [EmailAddress(ErrorMessage = "O [0] está errada")]
+            [Display(Name = "E-mail")]
             public string Email { get; set; }
 
-            [Required]
-            [DataType(DataType.Password)]
+            [Required(ErrorMessage = "A [0] é obrigatória")]
+            [DataType(DataType.Password, ErrorMessage ="A [0] está errada")]
+            [Display(Name = "Senha")]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = "Lembrar-me")]
             public bool RememberMe { get; set; }
         }
 

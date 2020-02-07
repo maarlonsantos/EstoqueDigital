@@ -45,20 +45,20 @@ namespace EEstoque.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            [Required]
-            [EmailAddress]
-            [Display(Name = "Email")]
+            [Required(ErrorMessage = "O [0] é obrigatório")]
+            [EmailAddress(ErrorMessage = "O [0] não é válido")]
+            [Display(Name = "E-mail")]
             public string Email { get; set; }
 
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
-            [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Required(ErrorMessage = "A [0] é obrigatória")]
+            [StringLength(100, ErrorMessage = "A {0} precisa ter pelo menos {2} e um total de {1} caracteres.", MinimumLength = 6)]
+            [DataType(DataType.Password)]           
+            [Display(Name = "Senha")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Display(Name = "Confirme sua senha")]
+            [Compare("Password", ErrorMessage = "A senha e a confirmação da senha precisam ser iguais.")]
             public string ConfirmPassword { get; set; }
         }
 
