@@ -1,0 +1,25 @@
+﻿@page
+@model RegisterConfirmationModel
+@inject SignInManager<IdentityUser> SignInManager
+@{
+    ViewData["Title"] = "E-mail Cadastrado";
+}
+
+<h1>E-mail cadastrado com sucesso</h1>
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+<p>
+    Seu e-mail foi cadastrado com sucesso, por favor fazer o <a asp-area="Identity" asp-page="/Account/Login">Login</a>.
+
+    @*This app does not currently have a real email sender registered, see <a href="https://aka.ms/aspaccountconf">these docs</a> for how to configure a real email sender.
+    Normally this would be emailed: <a id="confirm-link" href="@Model.EmailConfirmationUrl">Click here to confirm your account</a>*@
+</p>
+    }
+    else
+    {
+<p>
+        Houve um erro no cadastro. Por favor faça um novo <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">cadastro</a>.
+</p>
+    }
+}

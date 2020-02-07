@@ -7,9 +7,14 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EEstoque.Data;
 using EEstoque.Model;
+using Microsoft.AspNetCore.Authorization;
+
 
 namespace EEstoque.Controllers
 {
+    
+    [Authorize]
+    //por essa tag para que apenas seja acessado o estoque se o usuario esteja logado.
     public class EstoquesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -22,11 +27,6 @@ namespace EEstoque.Controllers
         // GET: Estoques
         public async Task<IActionResult> Index()
         {
-            if (User.Identity.IsAuthenticated)
-            {
-
-            }
-
             return View(await _context.Estoque.ToListAsync());
         }
 
